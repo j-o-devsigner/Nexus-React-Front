@@ -4,6 +4,7 @@ import useCustomers from "../hooks/useCustomer"
 import useProducts from "../hooks/useProducts"
 import axios from "axios"
 import { UserContext } from "./UserContext"
+import config from "../config"
 
 const QuoteFormContext = React.createContext()
 
@@ -66,7 +67,7 @@ const QuoteFormProvider = ( { children } ) => {
         } = useProducts(productsDataRef, {subtotal, setSubtotal, setTotal});
 
     const getQuotesData = async () => {
-        await axios.get("http://localhost:3002/quotes")
+        await axios.get(config.quotes_route)
         .then( res => {
             getMaxQuoteNumber(res.data.body.quotes)
 
@@ -393,7 +394,7 @@ const QuoteFormProvider = ( { children } ) => {
 
         dataToSubmit.quoteNumber = quoteNumber
         dataToSubmit.sendFrom = userLogged.id || 1
-        const response = await axios.post('http://localhost:3002/quotes/create', dataToSubmit)
+        const response = await axios.post(`${config.quotes_route}/create`, dataToSubmit)
             if (response.data.body === "quotes created") {
                 setConfirmSubmit(false)
                 setSuccessMessage(true)
@@ -407,10 +408,10 @@ const QuoteFormProvider = ( { children } ) => {
         if(Number(data.subtotal) !== Number(subtotal)){
             data.subtotal = Number(subtotal)
         }
-        await axios.put(`http://localhost:3002/quotes/${id}`, data)
+        await axios.put(`${config.quotes_route}/${id}`, data)
         .then( async (result) => {
             if(id !== quoteNumberUpdate) {
-                await axios.put(`http://localhost:3002/quotes/${id}`, {quoteNumber: quoteNumberUpdate})
+                await axios.put(`${config.quotes_route}/${id}`, {quoteNumber: quoteNumberUpdate})
             }
             if(result.data.body === "quotes updated!") {
                 setConfirmSubmit(false)

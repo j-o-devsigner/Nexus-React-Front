@@ -4,13 +4,14 @@ import ListData from '../../components/listdata/ListData';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { schemaColumns } from './schemaTable';
+import config from '../../config'
 
 const Products = () => {
 
     const [schemaData, setSchemaData] = React.useState([]);
 
     const listProducts = async () => {
-        await axios.get("http://localhost:3003/products")
+        await axios.get(config.products_route)
         .then(res => {
             const capitalizedArray = res.data.body.map(obj => {
                 return { ...obj, name: changeCase(obj.name) };

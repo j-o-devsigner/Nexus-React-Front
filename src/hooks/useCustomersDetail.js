@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import axios from 'axios'
+import config from '../config'
 
 const useCustomersDetail = () => {
 
@@ -14,7 +15,7 @@ const useCustomersDetail = () => {
 
     const getCustomer = async () => {
         if(id) {
-            await axios.get(`http://localhost:3004/customers/${id}`)
+            await axios.get(`${config.customers_route}/${id}`)
                 .then( result => {
                     result = result.data.body[0]
                     setCustomerData(result)
@@ -25,7 +26,7 @@ const useCustomersDetail = () => {
     const deleteCustomer = async (e) => {
         e.preventDefault()
         if(id) {
-            const response = await axios.put(`http://localhost:3004/customers/${id}`, { active: false })
+            const response = await axios.put(`${config.customers_route}/${id}`, { active: false })
             if(response.data.body === "customers updated!") {
                 setSuccessMessage(true)
                 setConfirmDelete(false)

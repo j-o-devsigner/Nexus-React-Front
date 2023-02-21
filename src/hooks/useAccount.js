@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import axios from 'axios'
 import { UserContext } from '../contexts/UserContext'
+import config from '../config'
 
 const useAccount = () => {
 
@@ -66,15 +67,6 @@ const useAccount = () => {
             return 1
         }
 
-        /* if (username !== oldUsername.toLocaleLowerCase()) {
-            setErrors({
-                ...errors,
-                duplicateUsername: true,
-            });
-            returnErrorsValues("duplicateUsername");
-            return 1;
-        } */
-
         return 0
     }
 
@@ -100,14 +92,14 @@ const useAccount = () => {
         }
 
     const token = localStorage.getItem('token')
-        const config = {
+        const configH = {
         headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
         }
         }
-        console.log(config)
-        const response = await axios.put(`http://localhost:3001/users/account/${id}`, dataToSend, config)
+
+        const response = await axios.put(`${config.users_route}/account/${id}`, dataToSend, configH)
         console.log(response)
         if (response.data.body === "users updated!" || response.data.body === "auth updated!") {
             setConfirmSubmit(false)

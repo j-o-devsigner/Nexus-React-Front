@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import axios from 'axios';
 import { mail } from '../views/quotes/components/quotesDetail/sendMail';
+import config from '../config';
 
 const useQuotesDetail = () => {
 
@@ -18,7 +19,7 @@ const useQuotesDetail = () => {
 
     const getQuote = async (id) => {
         if(id) {
-            await axios.get(`http://localhost:3002/quotes/${id}`)
+            await axios.get(`${config.quotes_route}/${id}`)
                 .then( result => {
                     result = result.data.body[0]
                     setQuoteData(result)
@@ -53,7 +54,7 @@ const useQuotesDetail = () => {
             html: generateHTML
         }
 
-        const response = await axios.post(`http://localhost:3002/quotes/mail`, { data, sended: true, id: id })
+        const response = await axios.post(`${config.quotes_route}/mail`, { data, sended: true, id: id })
 
         if(response.data.status === 200) {
             setConfirmModals({
@@ -73,7 +74,7 @@ const useQuotesDetail = () => {
     const deleteQuote = async (e) => {
         e.preventDefault();
         if(inputConfirmDelete === "I AM SURE") {
-            const response = await axios.put(`http://localhost:3002/quotes/${id}`, { active: false })
+            const response = await axios.put(`${config.quotes_route}/${id}`, { active: false })
             if(response.data.body === "quotes updated!") {
                 setConfirmModals({
                     ...confirmModals,

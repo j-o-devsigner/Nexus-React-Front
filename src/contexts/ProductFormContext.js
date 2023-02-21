@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from "react"
 import { useParams, useNavigate } from "react-router"
 import axios from "axios"
+import config from "../config"
 
 const ProductFormContext = createContext()
 
@@ -21,7 +22,7 @@ const ProductFormProvider = ( { children } ) => {
     const [errors, setErrors] = useState({})
 
     const listProducts = async () => {
-        await axios.get("http://localhost:3003/products")
+        await axios.get(config.products_route)
         .then( res => setDataProducts(res.data.body))
     }
 
@@ -116,7 +117,7 @@ const ProductFormProvider = ( { children } ) => {
 
     const submitData = async (e) => {
         e.preventDefault()
-        const response = await axios.post('http://localhost:3003/products/create', dataToCreate)
+        const response = await axios.post(`${config.products_route}/create`, dataToCreate)
         if (response.data.body === "products created") {
             setConfirmSubmit(false)
             setSuccessMessage(true)
@@ -126,7 +127,7 @@ const ProductFormProvider = ( { children } ) => {
     const updateData = async (e) => {
         e.preventDefault()
         if(id) {
-            const response = await axios.put(`http://localhost:3003/products/${id}`, dataToUpdate)
+            const response = await axios.put(`${config.products_route}/${id}`, dataToUpdate)
             if (response.data.body === "products updated!") {
                 setConfirmSubmit(false)
                 setSuccessMessage(true)

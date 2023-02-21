@@ -5,13 +5,14 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { schemaColumns } from './schemaTable';
 import './customers.css'
+import config from '../../config'
 
 const Customers = () => {
 
     const [schemaData, setSchemaData] = React.useState([]);
 
     const listProducts = async () => {
-        await axios.get("http://localhost:3004/customers")
+        await axios.get(config.customers_route)
         .then(res => {
             const capitalizedArray = res.data.body.map(obj => {
                 return { ...obj, name: changeCase(obj.name) };

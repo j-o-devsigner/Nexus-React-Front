@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from "react"
 import { useParams, useNavigate } from "react-router"
 import axios from "axios"
+import config from "../config"
 
 const UserFormContext = createContext()
 
@@ -22,13 +23,13 @@ const UserFormProvider = ( { children } ) => {
     const [role, setRole] = useState("Select a role")
     const [errors, setErrors] = useState({})
 
-    const listProducts = async () => {
-        await axios.get("http://localhost:3001/users")
+    const listUsers = async () => {
+        await axios.get(config.users_route)
         .then( res => setDataUsers(res.data.body))
     }
 
     useEffect(() => {
-        listProducts();
+        listUsers();
     }, []);
 
     const onChangeName = (e) => {
@@ -136,7 +137,7 @@ const UserFormProvider = ( { children } ) => {
 
     const submitData = async (e) => {
         e.preventDefault()
-        const response = await axios.post('http://localhost:3001/users/register', dataToCreate)
+        const response = await axios.post(`${config.users_route}/register`, dataToCreate)
         if (response.data.body === "users created") {
             setConfirmSubmit(false)
             setSuccessMessage(true)
@@ -149,7 +150,7 @@ const UserFormProvider = ( { children } ) => {
             ...dataToUpdate,
             oldUsername: oldUsername
         }
-        const response = await axios.put(`http://localhost:3001/users/${id}`, dataToSend)
+        const response = await axios.put(`${config.users_route}/${id}`, dataToSend)
         if (response.data.body === "users updated!" || response.data.body === "auth updated!") {
             setConfirmSubmit(false)
             setSuccessMessage(true)

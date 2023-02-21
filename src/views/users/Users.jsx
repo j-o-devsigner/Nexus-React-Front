@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '../../components/form/components'
 import { schemaColumns } from './schemaTable'
 import axios from 'axios'
+import config from '../../config'
 
 const Users = () => {
 
@@ -14,7 +15,7 @@ const Users = () => {
     const listUsers = async () => {
         const userLogged = JSON.parse(localStorage.getItem('userLogged'))
 
-        await axios.get("http://localhost:3001/users")
+        await axios.get(config.users_route)
         .then(res => {
             const capitalizedArray = res.data.body.map(obj => {
                 return { ...obj, name: changeCase(obj.name) };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from "react"
 import { useParams, useNavigate } from "react-router"
 import axios from "axios"
+import config from "../config"
 
 const CustomerFormContext = createContext()
 
@@ -20,7 +21,7 @@ const CustomerFormProvider = ( { children } ) => {
     const [errors, setErrors] = useState({})
 
     const listProducts = async () => {
-        await axios.get("http://localhost:3004/customers")
+        await axios.get(config.customers_route)
         .then( res => setDataCustomers(res.data.body))
     }
 
@@ -103,7 +104,7 @@ const CustomerFormProvider = ( { children } ) => {
 
     const submitData = async (e) => {
         e.preventDefault()
-        const response = await axios.post('http://localhost:3004/customers/create', dataToCreate)
+        const response = await axios.post(`${config.customers_route}/create`, dataToCreate)
         if (response.data.body === "customers created") {
             setConfirmSubmit(false)
             setSuccessMessage(true)
@@ -113,7 +114,7 @@ const CustomerFormProvider = ( { children } ) => {
     const updateData = async (e) => {
         e.preventDefault()
         console.log(dataToUpdate)
-        const response = await axios.put(`http://localhost:3004/customers/${id}`, dataToUpdate)
+        const response = await axios.put(`${config.customers_route}/${id}`, dataToUpdate)
         if (response.data.body === "customers updated!") {
             setConfirmSubmit(false)
             setSuccessMessage(true)

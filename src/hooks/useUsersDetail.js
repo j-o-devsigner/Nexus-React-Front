@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import { useNavigate, useParams } from 'react-router'
 import axios from 'axios'
+import config from '../config'
 
 const useUsersDetail = () => {
 
@@ -14,7 +15,7 @@ const useUsersDetail = () => {
 
     const getUser = async () => {
         if(id) {
-            await axios.get(`http://localhost:3001/users/${id}`)
+            await axios.get(`${config.users_route}/${id}`)
                 .then( result => {
                     result = result.data.body[0]
                     setUserData(result)
@@ -25,7 +26,7 @@ const useUsersDetail = () => {
     const deactiveUser = async (e) => {
         e.preventDefault()
         if(id) {
-            const response = await axios.put(`http://localhost:3001/users/${id}`, { active: false })
+            const response = await axios.put(`${config.users_route}/${id}`, { active: false })
             console.log(response.data.body)
             if(response.data.body === "users updated!") {
                 setSuccessMessage(true)
@@ -37,7 +38,7 @@ const useUsersDetail = () => {
     const activeUser = async (e) => {
         e.preventDefault()
         if(id) {
-            const response = await axios.put(`http://localhost:3001/users/${id}`, { active: true })
+            const response = await axios.put(`${config.users_route}/${id}`, { active: true })
             console.log(response.data.body)
             if(response.data.body === "users updated!") {
                 setSuccessMessage(true)

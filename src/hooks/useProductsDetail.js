@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import axios from 'axios'
+import config from '../config'
 
 const useProductsDetail = () => {
 
@@ -14,7 +15,7 @@ const useProductsDetail = () => {
 
     const getProduct = async () => {
         if(id) {
-            await axios.get(`http://localhost:3003/products/${id}`)
+            await axios.get(`${config.products_route}/${id}`)
                 .then( result => {
                     result = result.data.body[0]
                     setProductData(result)
@@ -25,7 +26,7 @@ const useProductsDetail = () => {
     const deleteProduct = async (e) => {
         e.preventDefault()
         if(id) {
-            const response = await axios.put(`http://localhost:3003/products/${id}`, { active: false })
+            const response = await axios.put(`${config.products_route}/${id}`, { active: false })
             if(response.data.body === "products updated!") {
                 setSuccessMessage(true)
                 setConfirmDelete(false)

@@ -7,6 +7,7 @@ import { Button } from '../../components/form/components';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
 import { schemaColumns } from './schemas';
+import config from '../../config'
 
 const Quotes = () => {
 
@@ -18,7 +19,7 @@ const Quotes = () => {
     const [deactivated, setDeactivated] = React.useState(false)
 
     const listQuotes = async () => {
-        await axios.get("http://localhost:3002/quotes")
+        await axios.get(config.quotes_route)
         .then( res => {
             let customersData = res.data.body.customers
             let quotesData = res.data.body.quotes
@@ -95,7 +96,6 @@ const Quotes = () => {
                     }
                 </div>
             </section>
-            {/* <Footer /> */}
         </>
     )
 }

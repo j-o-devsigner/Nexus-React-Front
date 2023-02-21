@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { UserContext } from '../contexts/UserContext'
 import { useNavigate } from 'react-router'
+import config from '../config'
 
 const useAuth = () => {
 
@@ -67,7 +68,7 @@ const useAuth = () => {
     e.preventDefault();
     const validator = validateData();
     if (validator === 0) {
-        const validate = await axios.post("http://localhost:3001/login", data)
+        const validate = await axios.post(`${config.login_route}`, data)
         console.log(validate.data.body.message)
         if(validate.data.body.message === "This account is disabled") {
             setErrors({
