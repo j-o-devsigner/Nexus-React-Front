@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,3 +73,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # CRM---Front
 >>>>>>> 684e180919123b25dd29eaa3ea39df56f1062e0b
+=======
+# Nexus-React-Front
+Front of the nexus project, a CRM developed with Postgresql, Express, React, Node . PERN Stack
+>>>>>>> cbc60c3d60ab73e764b0f47327bd09e4455adf3c
