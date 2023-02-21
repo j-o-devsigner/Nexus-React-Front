@@ -1,0 +1,83 @@
+import React, { useState, useEffect} from 'react'
+import { useNavigate, useParams } from 'react-router'
+import axios from 'axios'
+
+const useUsersDetail = () => {
+
+    const { id } = useParams()
+    const navigate = useNavigate()
+
+    const [userData, setUserData] = useState({})
+    const [showUpdate, setShowUpdate] = useState(false)
+    const [confirmDelete, setConfirmDelete] = useState(false)
+    const [successMessage, setSuccessMessage] = useState(false)
+
+    const getUser = async () => {
+        if(id) {
+            await axios.get(`http://localhost:3001/users/${id}`)
+                .then( result => {
+                    result = result.data.body[0]
+                    setUserData(result)
+                })
+        }
+    }
+
+    const deactiveUser = async (e) => {
+        e.preventDefault()
+        if(id) {
+            const response = await axios.put(`http://localhost:3001/users/${id}`, { active: false })
+            console.log(response.data.body)
+            if(response.data.body === "users updated!") {
+                setSuccessMessage(true)
+                setConfirmDelete(false)
+            }
+        }
+    }
+
+    const activeUser = async (e) => {
+        e.preventDefault()
+        if(id) {
+            const response = await axios.put(`http://localhost:3001/users/${id}`, { active: true })
+            console.log(response.data.body)
+            if(response.data.body === "users updated!") {
+                setSuccessMessage(true)
+                setConfirmDelete(false)
+            }
+        }
+    }
+
+    const editUser = () => {
+        setShowUpdate(toggle => !toggle)
+    }
+
+    const backToUsers = () => {
+        navigate('/users')
+    }
+
+    const closeForm = () => {
+        setShowUpdate(false)
+    }
+
+    const confirmDeleteUser = () => {
+        setConfirmDelete(toggle => !toggle)
+    }
+
+    useEffect( () => {
+        getUser()
+    }, [])
+
+    return {
+        userData,
+        showUpdate,
+        confirmDelete,
+        successMessage,
+        deactiveUser,
+        editUser,
+        backToUsers,
+        closeForm,
+        confirmDeleteUser,
+        activeUser,
+    }
+}
+
+export default useUsersDetail

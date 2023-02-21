@@ -1,0 +1,13 @@
+.nexus__section-container-info {
+    display: inline-block;
+    width: 80%;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    border-radius: 15px;
+    box-shadow: 0 0 80px rgba(8,7,16,0.2);
+}
+
+.center {
+    display: inline-block;
+    text-align: center;
+}

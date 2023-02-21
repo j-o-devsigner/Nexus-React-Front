@@ -1,0 +1,43 @@
+.small-form {
+    width: 30% !important;
+    height: 600px !important;
+    box-shadow: 0 0 80px rgba(8,7,16,0.2) !important;
+    background-color: rgba(251, 251, 255, .1) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.input-number {
+    width: 100px !important;
+}
+
+#create-btn {
+    height: 48px;
+    width: 200px;
+
+    transition: 300ms all;
+}
+
+#close-btn {
+    height: 48px;
+    width: 140px;
+    background-color: #9e2a2b !important;
+    color: var(--color-bg) !important;
+
+    transition: 300ms all;
+}
+
+.nexus__form-buttons {
+    margin-top: .5rem;
+}
+
+.nexus__section-detail {
+    display: flex;
+    margin-right: 4rem;
+    justify-content: center;
+}
+
+.nexus__section-price {
+    display: flex;
+    margin-right: 21.8rem;
+    justify-content: center;
+}

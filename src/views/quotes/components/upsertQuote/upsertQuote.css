@@ -1,0 +1,170 @@
+.nexus__form-containerForm {
+    display: flex;
+    position: inherit;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#amountInput {
+    width: 100px;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+#amount {
+    width: 120px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0;
+    border-right: 1px solid var(--color-bg);
+}
+
+#product {
+    width: 250px;
+    background-color: transparent;
+    border-radius: 0;
+    border-right: 1px solid var(--color-bg);
+}
+
+#detail {
+    width: 390px;
+    background-color: transparent;
+    border-radius: 0;
+    border-right: 1px solid var(--color-bg);
+}
+
+#unit {
+    width: 150px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0;
+    border-right: 1px solid var(--color-bg);
+}
+
+#total {
+    width: 150px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0;
+    border-right: 1px solid var(--color-bg);
+}
+
+#percentage-input {
+    width: 70px;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+#select-discount {
+    margin-bottom: 12px;
+}
+
+#nexus__form-section_total-btnCreate {
+    float: right;
+    margin: 0 1rem 0 0 !important;
+    height: 48px;
+    width: 200px;
+
+    transition: 300ms all;
+}
+
+#nexus__form-section_total-btnClose {
+    float: right;
+    margin: 0 1rem 0 0 !important;
+    height: 48px;
+    width: 200px;
+    background-color: #9e2a2b !important;
+    color: var(--color-bg) !important;
+
+    transition: 300ms all;
+}
+
+#quote-number {
+    width: 100px;
+    margin-bottom: 0;
+}
+
+#title-edit {
+    margin-top: 1.2rem;
+}
+
+#title-edit input {
+    margin-left: 1rem;
+}
+
+.input-error {
+    border: 1px solid red !important;
+}
+
+.readOnly-numbers {
+    width: 100px !important;
+    margin-right: 1rem;
+}
+
+.nexus__form-section_products-title {
+    display: block;
+    color: var(--color-btn);
+}
+
+.nexus__form-create-btn {
+    height: 48px;
+    width: 200px;
+
+    transition: 300ms all;
+}
+
+.nexus__form-create-btn:disabled {
+    pointer-events: none;
+    opacity: .5;
+}
+
+.nexus__form-list-done-btn {
+    float: right;
+    height: 48px;
+    width: 200px;
+    background-color: #98C1D9 !important;
+}
+
+.nexus__form-section_display-products {
+    height: 220px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: var(--color-text);
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 10px rgba(8,7,16,0.6);
+    padding: 1rem 2rem;
+    overflow: auto;
+}
+
+.nexus__form-section_display-products_item-header {
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-btn);
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 1rem;
+}
+
+.nexus__form-section_discounts {
+    display: inline-flex;
+    width: 100%;
+    height: auto;
+}
+
+.nexus__form-section_total {
+    display: inline-block;
+    width: 100%;
+}
+
+.total-inputs {
+    margin-right: 1rem;
+    width: 150px !important;
+}
+
+.nexus__form-section_customer {
+    display: inline-flex;
+    width: auto;
+    height: auto;
+}

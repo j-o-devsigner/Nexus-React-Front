@@ -1,0 +1,203 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-bg);
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+.gradient__bg {
+    /* ff 3.6+ */
+    background:-moz-radial-gradient(circle at 3% 25%, rgba(255, 255, 255, 1) 0%, rgba(152, 193, 217, 0.5) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 3% 25%, rgba(255, 255, 255, 1) 0%, rgba(152, 193, 217, 0.5) 100%);
+
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 3% 25%, rgba(255, 255, 255, 1) 0%, rgba(152, 193, 217, 0.5) 100%);
+
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 3% 25%, rgba(255, 255, 255, 1) 0%, rgba(152, 193, 217, 0.5) 100%);
+
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 3% 25%, rgba(255, 255, 255, 1) 0%, rgba(152, 193, 217, 0.5) 100%);
+}
+
+.gradient__text {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section__padding {
+    padding: 2.11rem 6rem;
+}
+
+.section__margin {
+    margin: 2rem 6rem;
+}
+
+.nexus__navbarLanding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6rem;
+}
+
+.nexus__navbarLanding-logo {
+    float: left;
+    margin-right: 0.625rem;
+}
+
+.nexus__navbarLanding-logo img {
+    margin-top: 0.25rem;
+    width:  12.5rem;
+    height: 2rem;
+
+    cursor: pointer;
+}
+
+.nexus__main {
+    display: flex;
+    flex-direction: row;
+}
+
+.nexus__main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    margin-right: 5rem;
+}
+
+.nexus__main-content__input {
+    width: 100%;
+    align-items: center;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.nexus__main-content__input input {
+    flex: 2;
+    width: 100%;
+    min-height: 50px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    background: rgba(41, 50, 65, .1);
+    padding: 0 1rem;
+    border: none;
+    outline: none;
+    color: var(--color-text);
+    margin-top: 10px;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.nexus__main-image {
+    width: 500px;
+    height: 425px;
+    margin-top: 3.3rem;
+}
+
+.nexus__main-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.floating-image {
+    position: relative;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-20px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .nexus__main {
+        flex-direction: column;
+    }
+
+    .nexus__main-content {
+        margin: 0 0 3rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .nexus__navbarLanding {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .nexus__main-content h1 {
+        font-size: 48px;
+        line-height: 60px;
+    }
+
+    .nexus__main-content p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .nexus__main-content__people {
+        flex-direction: column;
+    }
+
+    .nexus__main-content__people p {
+        margin: 0;
+    }
+
+    .nexus__main-content__input input,
+    .nexus__main-content__input button {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .nexus__navbarLanding {
+        padding: 2rem;
+    }
+@media screen and (max-width: 490px) {
+    .nexus__main-content h1 {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+    .nexus__main-content p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .nexus__main-content__input input,
+    .nexus__main-content__input button {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+}

@@ -1,0 +1,53 @@
+body {
+    /* ff 3.6+ */
+    background:-moz-radial-gradient(circle at 3% 25%, rgba(255, 255, 255, 1) 0%, rgba(152, 193, 217, 0.5) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 3% 25%, rgba(255, 255, 255, 1) 0%, rgba(152, 193, 217, 0.5) 100%);
+
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 3% 25%, rgba(255, 255, 255, 1) 0%, rgba(152, 193, 217, 0.5) 100%);
+
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 3% 25%, rgba(255, 255, 255, 1) 0%, rgba(152, 193, 217, 0.5) 100%);
+
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 3% 25%, rgba(255, 255, 255, 1) 0%, rgba(152, 193, 217, 0.5) 100%);
+
+    font-family: var(--font-family);
+}
+
+.section__padding {
+    padding: 2.11rem 6rem;
+}
+
+.section__margin {
+    margin: 2rem 6rem;
+}
+
+.nexus__section {
+    width: 100%;
+    height: auto;
+}
+
+.nexus__section-container {
+    width: 100%;
+}
+
+.nexus__section-container-button button {
+    margin-bottom: 20px;
+    margin-left: 40px;
+    padding: 15px;
+    border: none;
+    color: var(--color-text);
+    background-color: #98C1D9;
+    font-weight: 600;
+    border-radius: 5px;
+
+    transition: 300ms all;
+}
+.nexus__section-container-button button:hover {
+    scale: 1.1;
+    opacity: .9;
+    border-radius: 8px;
+}

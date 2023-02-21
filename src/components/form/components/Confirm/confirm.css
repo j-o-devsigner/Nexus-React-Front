@@ -1,0 +1,50 @@
+.nexus__confirm-title {
+    display: block;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.nexus__confirm-title h3 {
+    margin-top: .7rem;
+    overflow: hidden;
+}
+
+.nexus__confirm-buttons {
+    display: block;
+    text-align: center;
+}
+
+.nexus__confirm-text {
+    display: flex;
+    background-color: rgba(152, 193, 217, .3);
+    border-radius: 20px;
+    height: 87px;
+    overflow: hidden;
+    margin-top: 1rem;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.accept {
+    background-color: #98C1D9 !important;
+}
+
+.cancel {
+    background-color: #9e2a2b !important;
+    color: var(--color-bg) !important;
+}
+
+.unclickeable {
+    display: flex;
+    background: rgba(32,35,41,.5);
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-bg);
+}

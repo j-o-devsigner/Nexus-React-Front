@@ -1,0 +1,54 @@
+.nexus__delete-confirm-title {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.nexus__delete-confirm-title h3 {
+    margin-top: .7rem;
+    margin-bottom: 10px;
+}
+
+#text-delete {
+    color: #9e2a2b;
+}
+
+#instructions{
+    color: var(--color-btn)
+}
+
+.nexus__delete-confirm-buttons {
+    display: block;
+    text-align: center;
+}
+
+.nexus__delete-confirm-text {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: rgba(152, 193, 217, .3);
+    border-radius: 20px;
+    height: 140px;
+    overflow: hidden;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.nexus__delete-confirm-text p {
+    margin: 0;
+    text-align: center;
+}
+
+.nexus__delete-confirm-input {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.nexus__delete-confirm-input input {
+    background-color: rgba(158, 42, 43, .2);
+    color: var(--color-text);
+}::placeholder {
+    color: var(--color-text);
+}

@@ -1,0 +1,53 @@
+.rdt_TableHeader {
+    background-color: transparent !important;
+    font-size: 2.5rem !important;
+    font-family: var(--font-family) !important;
+    color: var(--color-text) !important;
+    text-align: center !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+}
+
+.rdt_Table {
+    background-color: transparent !important;
+    padding: 1rem 2rem !important;
+    text-align: center !important;
+}
+
+.rdt_TableRow {
+    border-bottom: 1px solid #ccc !important;
+    border: 1px solid #98C1D9 !important;
+    margin: .3rem 0 !important;
+    border-radius: 15px !important;
+    font-size: 1.125rem !important;
+    color: var(--color-text) !important;
+    transition: 300ms all !important;
+}
+
+.rdt_TableRow:hover {
+    background-color: #98C1D9 !important;
+    color: var(--color-text) !important;
+}
+
+.rdt_TableCol {
+    background-color: transparent !important;
+    color: var(--color-bg) !important;
+    font-size: 1.125rem !important;
+}
+
+.rdt_TableHeadRow {
+    background-color: var(--color-text) !important;
+    border-radius: 15px !important;
+    color: var(--color-bg) !important;
+    font-weight: bold !important;
+    margin-bottom: 1rem !important;
+}
+
+.rdt_TableFooter {
+    background-color: transparent !important;
+}
+
+.rdt_Pagination {
+    background-color: transparent !important;
+    border-top: 1px solid var(--color-text) !important;
+}

@@ -1,0 +1,21 @@
+.nopage-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nopage-container img {
+    width: 500px;
+}
+
+.nopage-container-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nopage-container-btn button {
+    background-color: #98C1D9;
+}

@@ -1,0 +1,124 @@
+.section__padding {
+    padding: 2.11rem 6rem;
+}
+
+.section__margin {
+    margin: 2rem 6rem;
+}
+
+.nexus__section {
+    width: 100%;
+    height: auto;
+}
+
+.nexus__section-customer {
+    display: flex;
+    justify-content: center;
+}
+
+.nexus__section-display-products {
+    height: 220px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: var(--color-text);
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 10px rgba(8,7,16,0.6);
+    padding: 1rem 2rem;
+    overflow: auto;
+}
+
+.nexus__section-display-products_item-header {
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-btn);
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 1rem;
+}
+
+#detailAmount {
+    width: 120px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0;
+    border-right: 1px solid var(--color-bg);
+}
+
+#detailProduct {
+    width: 250px;
+    background-color: transparent;
+    border-radius: 0;
+    border-right: 1px solid var(--color-bg);
+}
+
+#detailDetail {
+    width: 500px;
+    background-color: transparent;
+    border-radius: 0;
+    border-right: 1px solid var(--color-bg);
+}
+
+#detailUnit {
+    width: 190px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0;
+    border-right: 1px solid var(--color-bg);
+}
+
+#detailTotal {
+    width: 190px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.nexus__section-discounts {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.nexus__section-total {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nexus__section-buttons {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nexus_margin-inputs {
+    margin-right: 1rem;
+}
+
+.size-inputs-tNumbers {
+    width: 180px !important;
+}
+
+#edit-btn {
+    background-color: #98C1D9;
+}
+
+#delete-btn {
+    background-color: #9e2a2b;
+    color: var(--color-bg);
+}
+
+#title-detail {
+    margin: 0;
+}
+
+#back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+}

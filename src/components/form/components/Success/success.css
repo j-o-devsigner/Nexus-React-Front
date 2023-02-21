@@ -1,0 +1,45 @@
+.nexus__success-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.nexus__success-button {
+    display: block;
+    text-align: center;
+}
+
+.nexus__success-done-btn {
+    background-color: #98C1D9 !important;
+}
+
+.unclickeable {
+    display: flex;
+    background: rgba(32,35,41,.5);
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-bg);
+}
+
+.nexus__success-iconLoader {
+    display: block;
+    width: 150px;
+    animation: rotate-and-scale 2s ease-in-out infinite;
+}
+
+@keyframes rotate-and-scale {
+    0% {
+        transform: rotate(0deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(360deg) scale(1);
+    }
+    100% {
+        transform: rotate(720deg) scale(1.1);
+    }
+}
