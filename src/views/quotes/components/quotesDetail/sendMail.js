@@ -1,7 +1,7 @@
 
 export const mail = (dataQuote, productsData) => {
-
     const {id, customer, user, discountvalue, shippingvalue, subtotal, total, idtypediscount} = dataQuote
+    console.log(customer.name)
     const discountType = {
         "1" : "No discount",
         "2" : "Percentage",

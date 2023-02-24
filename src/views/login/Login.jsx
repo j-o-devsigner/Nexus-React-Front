@@ -3,6 +3,7 @@ import logo from '../../assets/logo.svg';
 import { Errors } from '../../components/form/components';
 import useAuth from '../../hooks/useAuth';
 import './login.css'
+import { Button } from '../../components/form/components';
 
 const Login = () => {
 
@@ -13,6 +14,7 @@ const Login = () => {
         onChangePassword,
         submitData,
         errors,
+        backToLanding,
     } = useAuth()
 
     return (
@@ -59,6 +61,21 @@ const Login = () => {
                 onClick={submitData}
             >Log in</button>
         </form>
+        <div className="nexus__login-accounts">
+            <p>
+                Username: admin
+                Password: admin
+            </p>
+            <p>
+                Username: manager
+                Password: manager
+            </p>
+        </div>
+        <Button
+            type="button"
+            onClick={backToLanding}
+            id="login_btn"
+        >Back</Button>
     </>
     )
 }

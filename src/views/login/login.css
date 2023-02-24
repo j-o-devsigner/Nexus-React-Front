@@ -125,3 +125,27 @@ body {
 #password:focus {
     border: .5px solid var(--color-text);
 }
+
+.nexus__login-accounts {
+    position: absolute;
+    width: 270px;
+    height: 200px;
+    top: 17.5%;
+    left: 70%;
+    border-radius: 15px;
+    background-color: rgba(251, 251, 255, .3);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 15px rgba(8,7,16,0.6);
+    padding: 1rem 2rem;
+}
+
+.nexus__login-accounts p {
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: 22px;
+}
+
+#login_btn {
+    float: right;
+    margin-right: 190px;
+}

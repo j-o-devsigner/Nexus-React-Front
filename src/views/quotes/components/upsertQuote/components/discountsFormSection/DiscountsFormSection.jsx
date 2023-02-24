@@ -22,7 +22,9 @@ const DiscountsFormSection = () => {
         <>
             <div className="nexus__form-section_discounts">
                 {errors.percentageInput && <Errors message="enter a percentage to discount"/>}
+                {errors.invalidPercentage && <Errors message="The value of the percentage cannot exceed 99"/>}
                 {errors.valueFixedInput && <Errors message="enter a fixed amount to discount"/>}
+                {errors.invalidValueFixed && <Errors message="The fixed amount cannot be greater than the subtotal"/>}
                     <Label>Discounts</Label>
                     <Select
                         id="select-discount"

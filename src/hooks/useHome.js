@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import config from '../config'
 
 const useHome = () => {
 
@@ -8,7 +9,7 @@ const useHome = () => {
 
 
     const getQuotesData = async () => {
-        await axios.get("http://localhost:3002/quotes")
+        await axios.get(config.quotes_route)
         .then( res => {
             const quotes = res.data.body.quotes
             const totals = quotes.map( quote => {

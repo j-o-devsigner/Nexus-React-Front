@@ -35,6 +35,7 @@ const QuoteFormProvider = ( { children } ) => {
 
     const [inputShippingValue, setInputShippingValue] = useState("")
     const [subtotal, setSubtotal] = useState(0)
+    const [subtotalRef, setSubtotalRef] = useState(0)
     const [total, setTotal] = useState(0)
     const [listDone, setListDone] = useState(false)
     const [action, setAction] = useState("create")
@@ -67,6 +68,7 @@ const QuoteFormProvider = ( { children } ) => {
         } = useProducts(productsDataRef, {subtotal, setSubtotal, setTotal});
 
     const getQuotesData = async () => {
+
         await axios.get(config.quotes_route)
         .then( res => {
             getMaxQuoteNumber(res.data.body.quotes)
@@ -136,6 +138,7 @@ const QuoteFormProvider = ( { children } ) => {
             "idProduct": product.product.id,
             "amount": Number(product.product.amount)
         }))
+        setSubtotalRef(subtotal)
 
         setDataToCreate({
             ...dataToCreate,
@@ -220,8 +223,10 @@ const QuoteFormProvider = ( { children } ) => {
             total.toFixed(2);
         });
 
-        const value = e.target.value;
-        setInputValuePercentage(value);
+        const value = e.target.value
+        if(!isNaN(value)) {
+            setInputValuePercentage(value);
+        }
 
         const parsedValue = isNaN(parseFloat(value)) ? 0 : parseFloat(value);
         let valuePercentageRef = (parsedValue / 100 * total).toFixed(2);
@@ -279,10 +284,9 @@ const QuoteFormProvider = ( { children } ) => {
         const value = e.target.value
         if(!isNaN(value)) {
             setInputValueFixed(value)
+            setSubtotal((total - value).toFixed(2))
+            setTotal((total - value).toFixed(2))
         }
-
-        setSubtotal((total - value).toFixed(2))
-        setTotal((total - value).toFixed(2))
 
         action === "create" ?
         setDataToCreate({...dataToCreate,
@@ -322,7 +326,9 @@ const QuoteFormProvider = ( { children } ) => {
     const calculateTotal = (e) => {
 
         const value = e.target.value
-        setInputShippingValue(value);
+        if(!isNaN(value)) {
+            setInputShippingValue(value);
+        }
 
         const parseShippingValue = isNaN(parseFloat(value)) ? 0 : parseFloat(value);
         const totalRef = Number(subtotal) + parseShippingValue;
@@ -364,6 +370,18 @@ const QuoteFormProvider = ( { children } ) => {
         if(quotesData.find(quote => quote.quotenumber === Number(quoteNumberUpdate) && quote.quotenumber !== Number(id))) {
             setErrors({...errors, numberTaken: true})
             returnErrorsValues("numberTaken")
+            return 1
+        }
+
+        if(inputValuePercentage >= 100) {
+            setErrors({...errors, invalidPercentage: true})
+            returnErrorsValues("invalidPercentage")
+            return 1
+        }
+
+        if(inputValueFixed >= subtotalRef) {
+            setErrors({...errors, invalidValueFixed: true})
+            returnErrorsValues("invalidValueFixed")
             return 1
         }
 

@@ -7,7 +7,21 @@ import { Title } from '../../components/form/components';
 
 const Home = () => {
 
+    const [dataToChart, setDataToChart] = React.useState([])
+
     const { dataChart } = useHome()
+
+    const fixData = () => {
+        const data = dataChart.map( (data) => {
+            data.total = (data.total).toFixed(2)
+            return data
+        })
+        setDataToChart(data)
+    }
+
+    React.useEffect( () => {
+        fixData()
+    }, [dataChart])
 
     return (
         <>
@@ -24,7 +38,7 @@ const Home = () => {
                 <AreaChart
                     width={820}
                     height={400}
-                    data={dataChart}
+                    data={dataToChart}
                     margin={{
                         top: 0,
                         right: 15,

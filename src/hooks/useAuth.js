@@ -69,7 +69,6 @@ const useAuth = () => {
     const validator = validateData();
     if (validator === 0) {
         const validate = await axios.post(`${config.login_route}`, data)
-        console.log(validate.data.body.message)
         if(validate.data.body.message === "This account is disabled") {
             setErrors({
                 ...errors,
@@ -97,6 +96,10 @@ const useAuth = () => {
         backStateInput("wrongAttempt")
     }
 
+    const backToLanding = () => {
+        navigate('/')
+    }
+
     return {
         username,
         password,
@@ -104,6 +107,7 @@ const useAuth = () => {
         onChangePassword,
         submitData,
         errors,
+        backToLanding,
     }
 }
 

@@ -1,7 +1,7 @@
 export default {
-    users_route: "http://localhost:3001/users",
-    quotes_route: "http://localhost:3002/quotes",
-    products_route: "http://localhost:3003/products",
-    customers_route: "http://localhost:3004/customers",
-    login_route: "http://localhost:3001/login"
+    users_route: process.env.REACT_APP_ROUTE_USERS,
+    quotes_route: process.env.REACT_APP_ROUTE_QUOTES,
+    products_route: process.env.REACT_APP_ROUTE_PRODUCTS,
+    customers_route: process.env.REACT_APP_ROUTE_CUSTOMERS,
+    login_route: process.env.REACT_APP_ROUTE_LOGIN
 };

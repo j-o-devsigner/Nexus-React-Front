@@ -70,7 +70,6 @@ const Users = () => {
                     data={schemaData}
                     deactivated={true}
                     />
-
                     }
             </div>
         </section>

@@ -4,4 +4,27 @@ footer {
     height: 80px;
     padding: 1rem 6rem;
     background-color: var(--color-footer);
+    text-align: center;
+    color: var(--color-bg);
+}
+
+.nexus__footer span{
+    color: var(--color-btn);
+}
+
+.network-icons {
+    margin: 0 10px;
+    font-size: 28px;
+    cursor: pointer;
+
+}
+
+.icon {
+    transition: 300ms all;
+    color: var(--color-bg);
+}
+
+.icon:hover {
+    scale: 1.3;
+    color: var(--color-btn);
 }
