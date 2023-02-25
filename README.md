@@ -8,8 +8,6 @@ This front was developed in React JS, you can preview the design of the applicat
 
 Project on [my behance](https://www.behance.net/gallery/164255121/Nexus-Web-Application)
 
-[Here](https://drive.google.com/drive/folders/1E3DhkeTApkv3s7L_CmiN7fiZ550aAxnW?usp=sharing) you can find the visual files for the operation of the project, the assets folder must go inside the src folder in the project
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
