@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
-import nopage from '../../assets/nopage.png'
 import { Button } from '../../components/form/components'
 import './noPage.css'
 
@@ -15,7 +14,7 @@ const NoPage = () => {
     return (
         <>
             <div className="nopage-container">
-                <img src={nopage} alter="Not found" className="floating-image"/>
+                <img src="https://i.ibb.co/YTBHyds/nopage.png" alter="Not found" className="floating-image"/>
             </div>
             <div className="nopage-container-btn">
                 <Button

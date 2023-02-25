@@ -1,5 +1,4 @@
 import React from 'react'
-import main_img from '../../assets/header-img.png'
 import Footer from '../../components/footer/Footer';
 import logo from '../../assets/logo.svg';
 import Title from './components/title/Title';
@@ -23,7 +22,7 @@ const Main = () => {
                     </P>
                 </div>
                 <div className="nexus__main-image">
-                    <img src={main_img} alt="main_img" className="floating-image"/>
+                    <img src="https://i.ibb.co/ByTgq8s/header-img.png"alt="main_img" className="floating-image"/>
                 </div>
             </main>
         </>
