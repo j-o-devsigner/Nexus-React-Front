@@ -22,7 +22,6 @@ const useQuotesDetail = () => {
             await axios.get(`${config.quotes_route}/${id}`)
                 .then( result => {
                     result = result.data.body[0]
-                    console.log(result)
                     setQuoteData(result)
                     setCustomer(result.customer)
                     const productsData = createItemsData(result.productsDetail, result.products)

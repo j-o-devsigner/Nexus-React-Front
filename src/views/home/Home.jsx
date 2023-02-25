@@ -14,6 +14,7 @@ const Home = () => {
     const fixData = () => {
         const data = dataChart.map( (data) => {
             data.total = (data.total).toFixed(2)
+            data.total = parseFloat(data.total)
             return data
         })
         setDataToChart(data)

@@ -27,7 +27,6 @@ const useUsersDetail = () => {
         e.preventDefault()
         if(id) {
             const response = await axios.put(`${config.users_route}/${id}`, { active: false })
-            console.log(response.data.body)
             if(response.data.body === "users updated!") {
                 setSuccessMessage(true)
                 setConfirmDelete(false)
@@ -39,7 +38,6 @@ const useUsersDetail = () => {
         e.preventDefault()
         if(id) {
             const response = await axios.put(`${config.users_route}/${id}`, { active: true })
-            console.log(response.data.body)
             if(response.data.body === "users updated!") {
                 setSuccessMessage(true)
                 setConfirmDelete(false)

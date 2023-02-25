@@ -123,7 +123,7 @@ const ProductFormProvider = ( { children } ) => {
             setSuccessMessage(true)
         }
     }
-    console.log(id)
+
     const updateData = async (e) => {
         e.preventDefault()
         if(id) {

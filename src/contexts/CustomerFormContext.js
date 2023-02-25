@@ -113,7 +113,6 @@ const CustomerFormProvider = ( { children } ) => {
 
     const updateData = async (e) => {
         e.preventDefault()
-        console.log(dataToUpdate)
         const response = await axios.put(`${config.customers_route}/${id}`, dataToUpdate)
         if (response.data.body === "customers updated!") {
             setConfirmSubmit(false)

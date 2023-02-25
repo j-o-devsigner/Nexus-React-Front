@@ -62,7 +62,7 @@ const DiscountsFormSection = () => {
                         <Label>Percentage</Label>
                         <Input
                             id="percentage-input"
-                            className={errors.percentageInput ? "input-error" : ""}
+                            className={errors.percentageInput || errors.invalidPercentage ? "input-error" : ""}
                             value={inputValuePercentage}
                             onChange={calculatePercentage}
                             readOnly={!listDone}
@@ -88,7 +88,7 @@ const DiscountsFormSection = () => {
                     <div>
                         <Label>Discount Value</Label>
                         <Input
-                            className={errors.percentageInput ? "readOnly-numbers input-error" : "readOnly-numbers"}
+                            className={errors.percentageInput || errors.invalidValueFixed ? "readOnly-numbers input-error" : "readOnly-numbers"}
                             onChange={calculateFixedAmount}
                             value={inputValueFixed}
                             readOnly={!listDone}

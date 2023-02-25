@@ -1,7 +1,6 @@
 import React from 'react'
 import SuccessMessage from './SuccessStyled'
 import './success.css'
-import icon from '../../../../assets/icon-loader.svg'
 import Button from '../Button/Button'
 
 const Success = ( { message, doneAction } ) => {
@@ -26,7 +25,7 @@ const Success = ( { message, doneAction } ) => {
     return (
         <>
         <div className="unclickeable">
-        {isLoading ? <img src={icon} className="nexus__success-iconLoader" /> : <></>}
+        {isLoading ? <img src="https://i.ibb.co/hMNcNmz/icon-loader.png" className="nexus__success-iconLoader" /> : <></>}
         {isSuccess &&
         <SuccessMessage>
             <div className="nexus__success-title">

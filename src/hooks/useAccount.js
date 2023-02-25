@@ -100,7 +100,6 @@ const useAccount = () => {
         }
 
         const response = await axios.put(`${config.users_route}/account/${id}`, dataToSend, configH)
-        console.log(response)
         if (response.data.body === "users updated!" || response.data.body === "auth updated!") {
             setConfirmSubmit(false)
             setSuccessMessage(true)
