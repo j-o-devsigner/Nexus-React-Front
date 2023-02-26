@@ -22,9 +22,14 @@ const Quotes = () => {
         await axios.get(config.quotes_route)
         .then( res => {
             let customersData = res.data.body.customers
+
+            const capNameCustomers = customersData.map( customer => {
+                return  {...customer, name: changeCase(customer.name)}
+            })
+
             let quotesData = res.data.body.quotes
             quotesData.map( quote => {
-                if(customersData.find(customer => {
+                if(capNameCustomers.find(customer => {
                     if(quote.sendto === customer.id) {
                         quote.customer = customer.name;
                     }
@@ -34,6 +39,10 @@ const Quotes = () => {
             setSchemaData([quotesData])
         })
     }
+
+    const changeCase = (text) => {
+        return text.toLowerCase().replace(/(^|\s)[a-z]/g, (letter) => letter.toUpperCase());
+    };
 
     const toggleTables = () => {
         setSended(toggle => !toggle)

@@ -18,10 +18,15 @@ const useUsersDetail = () => {
             await axios.get(`${config.users_route}/${id}`)
                 .then( result => {
                     result = result.data.body[0]
-                    setUserData(result)
+                    const user = {...result, name: changeCase(result.name)}
+                    setUserData(user)
                 })
         }
     }
+
+    const changeCase = (text) => {
+        return text.toLowerCase().replace(/(^|\s)[a-z]/g, (letter) => letter.toUpperCase());
+    };
 
     const deactiveUser = async (e) => {
         e.preventDefault()

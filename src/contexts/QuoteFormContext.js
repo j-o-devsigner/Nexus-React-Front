@@ -379,7 +379,7 @@ const QuoteFormProvider = ( { children } ) => {
             return 1
         }
 
-        if(inputValueFixed >= subtotalRef) {
+        if(inputValueFixed >= subtotalRef && action === "create") {
             setErrors({...errors, invalidValueFixed: true})
             returnErrorsValues("invalidValueFixed")
             return 1
@@ -387,7 +387,8 @@ const QuoteFormProvider = ( { children } ) => {
 
         return 0
     }
-
+    console.log(inputValueFixed, subtotal, subtotalRef)
+    console.log(quotesData)
 
     const returnErrorsValues = (name) => {
         setTimeout( () => {

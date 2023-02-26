@@ -10,6 +10,8 @@ Backend code [here](https://github.com/j-o-devsigner/Nexus-Node_Express-Back)
 
 Project on [my behance](https://www.behance.net/gallery/164255121/Nexus-Web-Application)
 
+Project running [here](https://nexus-front-9a8d.onrender.com)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

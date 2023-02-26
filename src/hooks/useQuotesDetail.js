@@ -23,12 +23,18 @@ const useQuotesDetail = () => {
                 .then( result => {
                     result = result.data.body[0]
                     setQuoteData(result)
-                    setCustomer(result.customer)
+                    const customer = {...result.customer, name: changeCase(result.customer.name)}
+
+                    setCustomer(customer)
                     const productsData = createItemsData(result.productsDetail, result.products)
                     setProductsItemsData(productsData)
                 })
         }
     }
+
+    const changeCase = (text) => {
+        return text.toLowerCase().replace(/(^|\s)[a-z]/g, (letter) => letter.toUpperCase());
+    };
 
     const createItemsData = (productsDetail, products) => {
         const items = []
