@@ -12,6 +12,8 @@ Project on [my behance](https://www.behance.net/gallery/164255121/Nexus-Web-Appl
 
 Project running [here](https://nexus-front-9a8d.onrender.com)
 
+More about [Enyoi Bootcamp](https://www.enyoi.co)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

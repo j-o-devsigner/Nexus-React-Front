@@ -387,8 +387,6 @@ const QuoteFormProvider = ( { children } ) => {
 
         return 0
     }
-    console.log(inputValueFixed, subtotal, subtotalRef)
-    console.log(quotesData)
 
     const returnErrorsValues = (name) => {
         setTimeout( () => {
