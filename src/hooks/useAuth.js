@@ -16,6 +16,7 @@ const useAuth = () => {
     const [password, setPassword] = useState("")
     const [data, setData] = useState({})
     const [errors, setErrors] = useState({})
+    const [loaderLogin, setLoaderLogin] = useState(false)
 
     const onChangeUsername = (e) => {
         setUsername(e.target.value)
@@ -68,14 +69,17 @@ const useAuth = () => {
     e.preventDefault();
     const validator = validateData();
     if (validator === 0) {
+        setLoaderLogin(true)
         const validate = await axios.post(`${config.login_route}`, data)
         if(validate.data.body.message === "This account is disabled") {
+            setLoaderLogin(false)
             setErrors({
                 ...errors,
                 accountDisabled: true
             })
             backStateInput("accountDisabled")
         } else if(validate.data.body.username) {
+            setLoaderLogin(false)
             localStorage.setItem('token', validate.data.body.token)
             delete(validate.data.body.token)
             localStorage.setItem('userLogged', JSON.stringify(validate.data.body))
@@ -83,6 +87,7 @@ const useAuth = () => {
             setUserLogged(validate.data.body)
             navigate('/home')
         } else {
+            setLoaderLogin(false)
             wrongAttempt()
         }
         }
@@ -108,6 +113,7 @@ const useAuth = () => {
         submitData,
         errors,
         backToLanding,
+        loaderLogin,
     }
 }
 

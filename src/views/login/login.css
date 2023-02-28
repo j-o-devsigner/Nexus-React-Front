@@ -137,6 +137,7 @@ body {
     backdrop-filter: blur(15px);
     box-shadow: 0 0 15px rgba(8,7,16,0.6);
     padding: 1rem 2rem;
+    z-index: -1;
 }
 
 .nexus__login-accounts p {

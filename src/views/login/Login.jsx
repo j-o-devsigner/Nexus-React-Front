@@ -3,7 +3,7 @@ import logo from '../../assets/logo.svg';
 import { Errors } from '../../components/form/components';
 import useAuth from '../../hooks/useAuth';
 import './login.css'
-import { Button } from '../../components/form/components';
+import { Button, Loader } from '../../components/form/components';
 
 const Login = () => {
 
@@ -15,10 +15,12 @@ const Login = () => {
         submitData,
         errors,
         backToLanding,
+        loaderLogin
     } = useAuth()
 
     return (
     <>
+        {loaderLogin && <Loader />}
         <div className="base__shapes">
             <div className="shape"></div>
             <div className="shape"></div>
